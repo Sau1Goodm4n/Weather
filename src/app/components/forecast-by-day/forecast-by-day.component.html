@@ -13,7 +13,7 @@
          </div>
       </div>
       <div class="humidity day-weather">
-         <img src="../../../assets/images/icons/humidity.svg" alt="">
+         <img [src]="getImg('./assets/images/icons/humidity.svg')" alt="">
          <div class="info">
             <p class="subtitle">Average humidity</p>
             <p>{{day.avghumidity}}%</p>

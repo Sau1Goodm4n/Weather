@@ -2,6 +2,8 @@ import { Component, Input } from '@angular/core';
 
 import { ForecastDay } from '../../models/index';
 
+import { ImgService } from '../../services/index';
+
 
 @Component({
    selector: 'wth-forecast-by-day',
@@ -11,6 +13,8 @@ import { ForecastDay } from '../../models/index';
 export class ForecastByDayComponent {
    @Input() day!: ForecastDay;
    @Input() dayI!: number;
+
+   constructor(private img: ImgService) { }
 
 
 
@@ -31,6 +35,10 @@ export class ForecastByDayComponent {
 
    public show(i: number): boolean {
       return new Date().getHours() >= 23 && i === 0 ? false : true
+   }
+
+   public getImg(url: string): string {
+      return this.img.get(url);
    }
 
 

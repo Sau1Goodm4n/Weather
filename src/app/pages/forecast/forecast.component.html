@@ -1,6 +1,6 @@
 <div class="top">
    <div class="location">
-      <img src="../../../assets/images/icons/location.svg" src="./assets/images/icons/location.svg" alt="">
+      <img [src]="getImg('./assets/images/icons/location.svg')" alt="">
       <p>
          {{forecast.location.country}}, {{forecast.location.name ===
          forecast.location.region ? '' : forecast.location.region + ','}} {{forecast.location.name}}

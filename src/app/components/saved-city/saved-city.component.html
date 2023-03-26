@@ -1,8 +1,7 @@
 <div *ngIf="forecast" class="saved-city">
    <div class="top">
       <div class="location">
-         <img src="../../../assets/images/icons/location.svg" src="./assets/images/icons/location.svg" width="20"
-            alt="">
+         <img [src]="getImg('./assets/images/icons/location.svg')" width="20" alt="">
          <p>
             {{forecast.location.country}}, {{forecast.location.name ===
             forecast.location.region ? '' : forecast.location.region + ','}} {{forecast.location.name}}
@@ -22,15 +21,14 @@
          <p>Feelslike {{forecast.current.temp.feelslike}}°</p>
       </div>
       <div class="current humidity">
-         <img src="../../../assets/images/icons/humidity.svg" src="./assets/images/icons/humidity.svg" alt=""
-            class="img">
+         <img [src]="getImg('./assets/images/icons/humidity.svg')" alt="" class="img">
          <div class="info">
             <p class="subtitle">Humidity</p>
             {{forecast.current.temp.humidity}}%
          </div>
       </div>
       <div class="current wind-speed">
-         <img src="../../../assets/images/icons/wind.svg" src="./assets/images/icons/wind.svg" alt="" class="img">
+         <img [src]="getImg('./assets/images/icons/wind.svg')" alt="" class="img">
          <div class="info">
             <p class="subtitle">Wind speed</p>
             {{forecast.current.temp.windSpeed}}kph

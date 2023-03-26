@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 
 import { Location, Forecast } from '../../models/index';
 import { IForecast } from '../../interfaces/index';
-import { StorageService, DataService, ModelResService, ForecastService } from '../../services/index';
+import { StorageService, DataService, ModelResService, ForecastService, ImgService } from '../../services/index';
 
 @Component({
    selector: 'wth-saved-city',
@@ -18,7 +18,8 @@ export class SavedCityComponent implements OnInit {
       private storage: StorageService,
       private data: DataService,
       private model: ModelResService,
-      private forecastS: ForecastService
+      private forecastS: ForecastService,
+      private img: ImgService
    ) {
    }
 
@@ -28,6 +29,10 @@ export class SavedCityComponent implements OnInit {
 
    public setForecast(forecast: Forecast): void {
       this.forecastS.setForecast(forecast, this.wrapper);
+   }
+
+   getImg(url: string): string {
+      return this.img.get(url);
    }
 
    ngOnInit(): void {
