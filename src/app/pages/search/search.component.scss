@@ -1,0 +1,74 @@
+@import '../../../styles/mixins', '../../../styles/variables';
+
+:host {
+   width: 100%;
+
+   .search-wr {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+
+      .input {
+         display: flex;
+         position: relative;
+         width: 80%;
+
+         .reset {
+            display: none;
+            color: #7e7e7e;
+            position: absolute;
+            top: 9px;
+            right: 10px;
+            cursor: pointer;
+
+            &.active {
+               display: inline;
+            }
+         }
+
+         input {
+            width: 100%;
+            padding: 4px 7px;
+            font-size: 18px;
+            border-radius: 10px;
+
+            &::placeholder {
+               font-style: italic;
+               opacity: 0.6;
+            }
+
+            &:focus {
+               border-bottom: 4px solid $base-color;
+            }
+         }
+
+      }
+
+      button {
+         @include button;
+      }
+   }
+
+   .response-wr {
+      @include block;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-height: 600px;
+      overflow: auto;
+   }
+
+   .error-msg {
+      text-align: center;
+      font-weight: bold;
+      font-size: 26px;
+   }
+}
+
+@media screen and (max-width:699px) {
+   .response-wr {
+      justify-content: center;
+   }
+}

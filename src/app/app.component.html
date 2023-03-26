@@ -1,0 +1,11 @@
+<div class="forecast" *ngIf="forecastS.forecast">
+   <wth-forecast [forecast]="forecastS.forecast"></wth-forecast>
+</div>
+<div class="container" [class.active]="forecastS.forecast">
+   <aside>
+      <wth-nav></wth-nav>
+   </aside>
+   <div class="app-container">
+      <router-outlet></router-outlet>
+   </div>
+</div>

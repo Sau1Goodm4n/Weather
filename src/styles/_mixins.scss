@@ -1,0 +1,31 @@
+@import './variables';
+
+@mixin block {
+   background-color: $base-color;
+   border-radius: 15px;
+   padding: 15px;
+   box-shadow: 0 0 3px 3px #63636396;
+
+   @media screen and (max-width:999px) {
+      padding: 10px;
+   }
+}
+
+@mixin button {
+   padding: 7px 20px;
+   border-radius: 10px;
+   text-transform: uppercase;
+   letter-spacing: 0.01em;
+   color: #fff;
+   background-color: #ffffff3d;
+   border: 2px solid #69696991;
+
+   &:hover {
+      background-color: #a5a4a4;
+   }
+}
+
+@mixin scroll {
+   scrollbar-width: thin;
+   scrollbar-color: #fff $base-color;
+}

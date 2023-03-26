@@ -1,0 +1,140 @@
+@import '../../../styles/mixins', '../../../styles/variables';
+
+.saved-city {
+   @include block;
+   border: 1px solid #fff;
+   min-height: 220px;
+   background: url('../../../assets/images/background/background.png') no-repeat;
+   background-size: cover;
+   background-position: center;
+   position: relative;
+   max-width: 100%;
+
+   .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .location {
+         display: flex;
+         gap: 5px;
+         align-items: center;
+         margin-bottom: 20px;
+         flex: 0 0 80%;
+
+         p {
+            line-height: 1.1em;
+         }
+      }
+
+      .delete {
+         width: 24px;
+         height: 24px;
+         border-radius: 50%;
+         padding: 2.5px;
+         cursor: pointer;
+         float: right;
+
+         &:hover {
+            background-color: #c5c5c57c;
+         }
+
+         .svg-icon {
+            width: 1.6em;
+            height: 1.6em;
+
+            path,
+            polygon,
+            rect {
+               fill: #6f7275;
+            }
+
+            circle {
+               stroke: #6f7275;
+               stroke-width: 1;
+            }
+         }
+      }
+   }
+
+
+   .current-wr {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      justify-content: space-between;
+      gap: 30px;
+
+      .current {
+         @include block;
+         height: 100px;
+         width: 170px;
+         text-align: center;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         gap: 10px;
+         font-size: 18px;
+         flex: 0 0 23%;
+
+         &.temp {
+            flex-direction: column;
+
+            p {
+               position: relative;
+            }
+
+            .current-temp {
+               font-size: 30px;
+               margin-bottom: 20px;
+            }
+         }
+
+         &.humidity,
+         &.wind-speed {
+            p {
+               margin-bottom: 5px;
+               font-style: italic;
+               text-decoration: underline;
+            }
+         }
+      }
+
+      .description {
+         text-align: center;
+
+         .text {
+            margin-bottom: 10px;
+            font-size: 20px;
+         }
+
+         .icon {
+            max-width: 100%;
+         }
+      }
+   }
+
+   .show-forecast {
+      text-align: right;
+      margin-bottom: 15px;
+
+      button {
+         @include button;
+      }
+   }
+}
+
+@media screen and (max-width:699px) {
+
+   .saved-city {
+      min-height: 530px;
+
+      .current-wr {
+         flex-direction: column;
+      }
+
+      .show-forecast {
+         text-align: center;
+      }
+   }
+}

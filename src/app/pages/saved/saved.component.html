@@ -1,0 +1,5 @@
+<div *ngIf="list.length > 0" class="saved-wr" #wrapper>
+   <wth-saved-city [location]="location" [wrapper]="wrapper" *ngFor="let location of list"></wth-saved-city>
+</div>
+<div *ngIf="!list.length" class="error-msg">You don't have any saved city. <a (click)="navigate('/search')">Do you want
+      find?</a></div>

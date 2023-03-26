@@ -1,0 +1,14 @@
+<div class="hour-body" *ngIf="(getTime(hour.time) && dayI === 0) || dayI !== 0">
+   <div class="time">{{getTime(hour.time)}}</div>
+   <div class="hour-weather-wr">
+      <div class="temp hour-weather">{{hour.temp}}°</div>
+      <div class="feelslike hour-weather">
+         <p>Feelslike</p>
+         {{hour.feelslike}}°
+      </div>
+      <div class="description">
+         <img [src]="hour.icon" alt="">
+         <p class="text">{{hour.text}}</p>
+      </div>
+   </div>
+</div>

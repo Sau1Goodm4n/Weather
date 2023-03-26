@@ -1,0 +1,89 @@
+@import '../../../styles/mixins';
+
+.hour-body {
+   display: flex;
+   align-items: center;
+   box-shadow: none;
+   @include block;
+   background-image: url('../../../assets/images/background/background.png');
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center;
+   border: 1px solid #fff;
+   margin-bottom: 10px;
+   gap: 10px;
+
+   .time {
+      font-size: 40px;
+      font-weight: 700;
+      flex: 0 0 20%;
+   }
+
+   .hour-weather-wr {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex: 0 0 80%;
+      font-size: 30px;
+
+      .hour-weather {
+         @include block;
+         box-shadow: none;
+         border: 1px solid #fff;
+         height: 100px;
+         flex: 0 0 30%;
+         width: 170px;
+         height: 120px;
+
+         &.temp {
+            font-size: 40px;
+            font-weight: 700;
+         }
+
+         &.feelslike {
+            p {
+               margin-bottom: 10px;
+               text-decoration: underline;
+               font-style: italic;
+            }
+         }
+      }
+
+      .hour-weather,
+      .description {
+         text-align: center;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         justify-content: center;
+      }
+
+      .description {
+         margin-bottom: 10px;
+         float: right;
+         width: 100%;
+
+         .text {
+            line-height: 1.1em;
+         }
+      }
+   }
+}
+
+@media screen and (max-width:699px) {
+
+   .hour-body {
+      align-items: baseline;
+   }
+
+   .hour-weather-wr {
+      flex-direction: column;
+   }
+}
+
+@media screen and (max-width:499px) {
+   .hour-body {
+      flex-direction: column;
+      align-items: center;
+   }
+}

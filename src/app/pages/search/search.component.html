@@ -1,0 +1,11 @@
+<div class="search-wr">
+   <div class="input">
+      <input placeholder="Enter name of your city..." type="text" (input)="showReset(input)" #input>
+      <span class="reset" [class.active]="isDirty" (click)=" resetInput(input)">&#10006;</span>
+   </div>
+   <button (click)="search(input)">Search</button>
+</div>
+<div class="response-wr" *ngIf="citys">
+   <wth-search-city [city]="city" *ngFor="let city of citys"></wth-search-city>
+</div>
+<div *ngIf="errorMsg" class="error-msg">{{errorMsg}}</div>

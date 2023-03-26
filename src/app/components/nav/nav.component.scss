@@ -1,0 +1,40 @@
+@import '../../../styles/mixins';
+
+:host {
+   @include block;
+   height: 200px;
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+   gap: 20px;
+
+   a {
+      padding: 30px;
+      font-size: 24px;
+      border-radius: 15px;
+      background-color: #b6b6b623;
+
+      &:hover {
+         background-color: #b6b6b654;
+      }
+
+      &.active {
+         background-color: #727272;
+      }
+   }
+
+}
+
+@media screen and (max-width:1099px) {
+   :host {
+      flex-direction: row;
+      height: auto;
+      width: 300px;
+      gap: 10px;
+
+      a {
+         padding: 15px;
+         font-size: 18px;
+      }
+   }
+}

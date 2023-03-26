@@ -1,0 +1,34 @@
+<div class="wr">
+   <div class="date">
+      {{getDayName(dayI)}}
+   </div>
+   <div class="day-weather-wr">
+      <div class="temp day-weather">
+         <div>
+            <div class="minmax">
+               Max <span>{{day.maxtemp}}°</span>/Min <span>{{day.mintemp}}°</span>
+            </div>
+            <p class="subtitle">Average temperature</p>
+            <p class="avg-temp">{{day.avgtemp}}°</p>
+         </div>
+      </div>
+      <div class="humidity day-weather">
+         <img src="../../../assets/images/icons/humidity.svg" alt="">
+         <div class="info">
+            <p class="subtitle">Average humidity</p>
+            <p>{{day.avghumidity}}%</p>
+         </div>
+      </div>
+      <div class="description">
+         <p class="text">{{day.text}}</p>
+         <img [src]="day.icon" alt="">
+      </div>
+   </div>
+   <details *ngIf="show(dayI)">
+      <summary>Forecast By Hour</summary>
+      <div class="hours">
+         <wth-forecast-by-hour [hour]="hour" [dayI]="dayI"
+            *ngFor="let hour of day.hour; let hourI = index"></wth-forecast-by-hour>
+      </div>
+   </details>
+</div>

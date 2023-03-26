@@ -1,0 +1,51 @@
+@import '../../../styles/mixins';
+
+:host {
+   max-width: 100%;
+   height: 900px;
+   display: flex;
+   flex-direction: column;
+   gap: 15px;
+   @include block;
+   overflow: auto;
+
+   .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .location {
+         margin-bottom: 7px;
+
+         display: flex;
+         gap: 5px;
+         align-items: center;
+         margin-bottom: 20px;
+         flex: 0 0 80%;
+
+         p {
+            line-height: 1.1em;
+         }
+      }
+
+      .close {
+         width: 15px;
+         height: 15px;
+         cursor: pointer;
+         font-size: 1.7em;
+      }
+   }
+
+
+   .hours {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+   }
+}
+
+@media screen and (max-width:999px) {
+   :host {
+      height: 100%;
+   }
+}

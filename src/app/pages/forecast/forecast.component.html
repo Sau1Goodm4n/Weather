@@ -1,0 +1,15 @@
+<div class="top">
+   <div class="location">
+      <img src="../../../assets/images/icons/location.svg" alt="">
+      <p>
+         {{forecast.location.country}}, {{forecast.location.name ===
+         forecast.location.region ? '' : forecast.location.region + ','}} {{forecast.location.name}}
+      </p>
+   </div>
+   <div class="close" (click)="close()">
+      <span>&#10006;</span>
+   </div>
+</div>
+<div class="day" *ngFor="let day of forecast.forecast; let dayI = index">
+   <wth-forecast-by-day [day]="day" [dayI]="dayI"></wth-forecast-by-day>
+</div>
