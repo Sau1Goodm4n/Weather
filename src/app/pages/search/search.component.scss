@@ -67,6 +67,12 @@
    }
 }
 
+@media screen and (max-width:999px) {
+   .response-wr {
+      overflow: hidden;
+   }
+}
+
 @media screen and (max-width:699px) {
    .response-wr {
       justify-content: center;
