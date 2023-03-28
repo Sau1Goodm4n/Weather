@@ -24,7 +24,8 @@ export class SavedCityComponent implements OnInit {
    }
 
    public deleteCity(): void {
-      this.storage.delete(this.location);
+      const res: boolean = confirm(`You want delete city ${this.location.name} from this list. Continue?`);
+      if (res) this.storage.delete(this.location);
    }
 
    public setForecast(forecast: Forecast): void {

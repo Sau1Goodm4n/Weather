@@ -17,9 +17,20 @@
       font-size: 24px;
    }
 
-   button {
-      @include button;
+   .button-wr {
+      width: 170px;
       align-self: flex-end;
+      text-align: center;
+
+      button {
+         @include button;
+         margin-bottom: 10px;
+      }
+
+      .error-msg {
+         font-style: italic;
+      }
+
    }
 }
 
@@ -29,7 +40,7 @@
       text-align: center;
       height: 200px;
 
-      button {
+      .button-wr {
          align-self: center;
       }
    }

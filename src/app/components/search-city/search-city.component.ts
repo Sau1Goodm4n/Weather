@@ -8,6 +8,7 @@ import { StorageService, NavigationService } from '../../services/index';
    styleUrls: ['./search-city.component.scss']
 })
 export class SearchCityComponent {
+   public errorMsg: string | null = null;
 
    @Input() city!: Location;
 
@@ -17,8 +18,12 @@ export class SearchCityComponent {
    ) { }
 
    public addToSaved(obj: Location): void {
-      this.storage.addToStorage(obj);
-      this.navigation.navigate('/saved');
+      if (!this.storage.addToStorage(obj)) {
+         this.errorMsg = 'This city alredy exist in list';
+         setTimeout(() => this.errorMsg = null, 5000)
+      } else {
+         this.navigation.navigate('/saved');
+      }
    }
 
 }

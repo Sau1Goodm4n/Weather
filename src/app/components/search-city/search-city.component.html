@@ -2,4 +2,7 @@
    <p class="location">{{city.country}}, {{city.name}}</p>
    <p class="region">Region - {{city.region}}</p>
 </div>
-<button (click)="addToSaved(city)">Add To Saved</button>
+<div class="button-wr">
+   <button (click)="addToSaved(city)">Add To Saved</button>
+   <div class="error-msg" *ngIf="errorMsg">{{errorMsg}}</div>
+</div>

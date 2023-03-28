@@ -19,12 +19,13 @@ export class StorageService {
       return list !== null ? JSON.parse(list) : [];
    }
 
-   public addToStorage(forecast: Location): void {
-      if (this._isInArray(forecast, this.list)) return;
+   public addToStorage(forecast: Location): boolean {
+      if (this._isInArray(forecast, this.list)) return false;
 
       this.list.push(forecast);
 
       this._uploadStorage(this.list);
+      return true;
    }
 
    private _isInArray(el: any, list: Location[]): boolean {

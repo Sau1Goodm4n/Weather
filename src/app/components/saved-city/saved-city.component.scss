@@ -33,7 +33,6 @@
          border-radius: 50%;
          padding: 2.5px;
          cursor: pointer;
-         float: right;
 
          &:hover {
             background-color: #c5c5c57c;
@@ -46,11 +45,11 @@
             path,
             polygon,
             rect {
-               fill: #6f7275;
+               fill: #ffffff;
             }
 
             circle {
-               stroke: #6f7275;
+               stroke: #ffffff;
                stroke-width: 1;
             }
          }
