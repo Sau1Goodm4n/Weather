@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Location } from '../../models/index';
-import { StorageService } from '../../services/index';
+import { StorageService, NavigationService } from '../../services/index';
 
 @Component({
    selector: 'wth-search-city',
@@ -13,14 +13,12 @@ export class SearchCityComponent {
 
    constructor(
       private storage: StorageService,
+      private navigation: NavigationService
    ) { }
 
    public addToSaved(obj: Location): void {
-      this.storage.addToStorage(obj)
+      this.storage.addToStorage(obj);
+      this.navigation.navigate('/saved');
    }
-
-
-
-
 
 }
